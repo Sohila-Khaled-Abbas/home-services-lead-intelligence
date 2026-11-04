@@ -1,0 +1,76 @@
+{
+  "source": "OpenStreetMap via Overpass API",
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "license": "Open Database License (ODbL) 1.0",
+  "attribution": "© OpenStreetMap contributors",
+  "attribution_url": "https://www.openstreetmap.org/copyright",
+  "query_file": "queries\\cairo_metro_discovery_v2.overpassql",
+  "bbox_south_west_north_east": [
+    29.9,
+    31.1,
+    30.2,
+    31.55
+  ],
+  "requested_tags_and_intended_meaning": [
+    [
+      "nwr[\"craft\"=\"hvac\"]",
+      "HVAC installer/service"
+    ],
+    [
+      "nwr[\"shop\"=\"hvac\"]",
+      "HVAC equipment retailer"
+    ],
+    [
+      "nwr[\"shop\"=\"air_conditioning\"]",
+      "Air-conditioning retailer/candidate"
+    ],
+    [
+      "nwr[\"craft\"=\"roofer\"]",
+      "Roofing contractor"
+    ],
+    [
+      "nwr[\"craft\"=\"photovoltaic\"]",
+      "Solar/PV installer or planner"
+    ],
+    [
+      "nwr[\"shop\"=\"photovoltaic\"]",
+      "Solar/PV retailer"
+    ],
+    [
+      "nwr[\"craft\"=\"plumber\"]",
+      "Adjacent trade — plumbing"
+    ],
+    [
+      "nwr[\"craft\"=\"electrician\"]",
+      "Adjacent trade — electrical"
+    ]
+  ],
+  "extracted_at_utc": "2026-11-04T23:23:57+00:00",
+  "osm_base_timestamp": "2026-11-04T23:23:38Z",
+  "http_status": 200,
+  "raw_response_file": "data\\raw\\osm_cairo_metro_v2_20261104T232357Z.json",
+  "processed_csv_file": "data\\processed\\osm_cairo_metro_discovery_v2_20261104T232357Z.csv",
+  "raw_elements": 4,
+  "unique_elements": 4,
+  "records_by_classification": {
+    "Adjacent_Plumbing": 2,
+    "Adjacent_Electrical": 2
+  },
+  "named_elements": 4,
+  "elements_with_any_public_contact_field": 1,
+  "deduplication_key": [
+    "osm_type",
+    "osm_id"
+  ],
+  "permission_policy": {
+    "default_status": "unknown",
+    "campaign_eligible_default": false,
+    "note": "Publicly mapped contact details do not establish marketing consent."
+  },
+  "limitations": [
+    "OSM coverage in Cairo may be incomplete or uneven.",
+    "Retailers and adjacent trades are candidates, not confirmed installers.",
+    "Records must be manually checked for active business status and service fit.",
+    "This is not a verified or consent-cleared outbound lead list."
+  ]
+}

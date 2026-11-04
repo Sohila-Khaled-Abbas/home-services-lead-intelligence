@@ -1,0 +1,54 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-04T23:23:38Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 2196966209,
+      "lat": 29.9573744,
+      "lon": 31.2602156,
+      "tags": {
+        "craft": "plumber",
+        "name": "Basheer Plumbing"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2196979752,
+      "lat": 29.9580592,
+      "lon": 31.2600227,
+      "tags": {
+        "craft": "electrician",
+        "name": "Ali"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3399602067,
+      "lat": 30.0006997,
+      "lon": 31.4833601,
+      "tags": {
+        "craft": "electrician",
+        "name": "TMT Electrical Contracting",
+        "phone": "+20226126987",
+        "website": "http://tmt.com.eg/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11469056429,
+      "lat": 29.9579203,
+      "lon": 31.259267,
+      "tags": {
+        "check_date": "2023-12-30",
+        "craft": "plumber",
+        "name": "محل سباكة",
+        "name:ar": "محل سباكة"
+      }
+    }
+  ]
+}
