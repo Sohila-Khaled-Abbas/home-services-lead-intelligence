@@ -1,0 +1,42 @@
+{
+  "project": "Home Services Lead Intelligence",
+  "source_name": "OpenStreetMap via Overpass API",
+  "source_endpoint": "https://overpass-api.de/api/interpreter",
+  "source_license": "Open Database License (ODbL) 1.0",
+  "attribution": "© OpenStreetMap contributors",
+  "attribution_url": "https://www.openstreetmap.org/copyright",
+  "query_file": "queries\\cairo_metro_hvac_roofing.overpassql",
+  "bounding_box_south_west_north_east": [
+    29.9,
+    31.1,
+    30.2,
+    31.55
+  ],
+  "geographic_scope_note": "Broad Cairo metro rectangular bounding box; not an administrative boundary.",
+  "tags_queried": [
+    "craft=hvac",
+    "craft=roofer"
+  ],
+  "requested_at_utc": "2026-11-04T23:12:56+00:00",
+  "osm_base_timestamp": "2026-11-04T23:12:30Z",
+  "raw_response_file": "data\\raw\\osm_cairo_metro_20261104T231256Z.json",
+  "processed_csv_file": "data\\processed\\osm_cairo_metro_leads_20261104T231256Z.csv",
+  "http_status": 200,
+  "http_response_bytes": 287,
+  "records_returned": 0,
+  "records_after_deduplication": 0,
+  "records_by_vertical": {},
+  "deduplication_key": [
+    "osm_type",
+    "osm_id"
+  ],
+  "contact_permission_status_default": "unknown",
+  "campaign_eligible_default": false,
+  "limitations": [
+    "OpenStreetMap is community-maintained; coverage is incomplete and uneven.",
+    "A mapped feature is not necessarily a verified active business.",
+    "Public contact details do not establish consent for direct marketing.",
+    "Only HVAC and roofing craft tags are queried in this first pass.",
+    "Solar providers require a separately validated source/tag strategy."
+  ]
+}
