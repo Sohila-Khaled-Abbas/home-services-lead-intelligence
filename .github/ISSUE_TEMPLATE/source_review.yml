@@ -1,0 +1,45 @@
+name: Data source review
+description: Propose and document a public API or data source before implementing an adapter.
+title: "[Source review]: "
+labels:
+  - enhancement
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Canonical source URL
+    validations:
+      required: true
+  - type: textarea
+    id: source-owner
+    attributes:
+      label: Source owner and source type
+      description: Who publishes the data? Is it an API, official list, directory, or website?
+    validations:
+      required: true
+  - type: textarea
+    id: access
+    attributes:
+      label: Access method and terms
+      description: Link to API documentation, terms of use, robots guidance, or written permission.
+    validations:
+      required: true
+  - type: textarea
+    id: license
+    attributes:
+      label: License, attribution, and reuse conditions
+    validations:
+      required: true
+  - type: textarea
+    id: fields
+    attributes:
+      label: Required fields and business purpose
+    validations:
+      required: true
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Known limitations and risks
+      description: Coverage, freshness, rate limits, data quality, and reuse restrictions.
+    validations:
+      required: true
