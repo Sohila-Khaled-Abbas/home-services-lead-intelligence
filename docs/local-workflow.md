@@ -28,7 +28,7 @@ Save a local inventory of the project files:
 ~~~powershell
 Get-ChildItem -Force
 Get-ChildItem -Recurse -File |
-    Where-Object { $_.FullName -notmatch '[\\/]\.git[\\/]|[\\/]\.venv[\\/]|[\\/]__pycache__[\\/]' } | |
+    Where-Object { $_.FullName -notmatch '[\\/]\.git[\\/]|[\\/]\.venv[\\/]|[\\/]__pycache__[\\/]' } |
     Select-Object FullName, Length, LastWriteTime
 ~~~
 

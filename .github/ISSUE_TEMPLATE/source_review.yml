@@ -2,7 +2,7 @@ name: Data source review
 description: Propose and document a public API or data source before implementing an adapter.
 title: "[Source review]: "
 labels:
-  - data-source
+  - enhancement
 body:
   - type: input
     id: source
