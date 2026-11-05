@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "home-services-lead-intelligence"
+version = "0.2.0"
+description = "A provenance-first public business data discovery pipeline for Egypt's home-services market."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.32,<3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8,<10",
+    "ruff>=0.9,<1.0",
+]
+
+[project.scripts]
+home-services-osm-extract = "home_services_lead_intelligence.osm:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

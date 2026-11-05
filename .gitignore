@@ -1,0 +1,36 @@
+# Python environments and generated files
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+build/
+dist/
+*.egg-info/
+
+# Local configuration and logs
+.env
+.env.*
+!.env.example
+*.log
+
+# Generated extraction outputs: retain only the two existing November 4 baseline runs.
+# New live responses can contain third-party contact details; review before publishing.
+data/raw/*
+!data/raw/osm_cairo_metro_20261104T231256Z.json
+!data/raw/osm_cairo_metro_v2_20261104T232357Z.json
+
+data/processed/*
+!data/processed/osm_cairo_metro_leads_20261104T231256Z.csv
+!data/processed/osm_cairo_metro_discovery_v2_20261104T232357Z.csv
+
+data/metadata/*
+!data/metadata/osm_cairo_metro_run_20261104T231256Z.json
+!data/metadata/osm_cairo_metro_discovery_v2_20261104T232357Z.json
