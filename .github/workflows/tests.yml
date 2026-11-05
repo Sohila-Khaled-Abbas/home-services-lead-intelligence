@@ -25,12 +25,15 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ matrix.python-version }}_EXPR
           cache: pip
           cache-dependency-path: pyproject.toml
 
       - name: Install project and test dependencies
         run: python -m pip install -e ".[dev]"
 
-      - name: Run offline test suite
+      - name: Run offline unit tests
         run: python -m pytest
+
+      - name: Run Ruff lint checks
+        run: python -m ruff check .
