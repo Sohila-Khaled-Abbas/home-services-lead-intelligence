@@ -14,15 +14,15 @@ python -m venv .venv
 ## Before making changes
 
 1. Read the [README](README.md), [architecture](docs/architecture.md), and [data governance](docs/data-governance.md).
-2. Create a short-lived branch from the latest \`main\`.
+2. Create a short-lived branch from the latest `main`.
 3. Keep changes focused and avoid committing local environments, credentials, or unreviewed extraction output.
 
 Suggested branch names:
 
-- \`feat/<short-description>\`
-- \`fix/<short-description>\`
-- \`docs/<short-description>\`
-- \`chore/<short-description>\`
+- `feat/<short-description>`
+- `fix/<short-description>`
+- `docs/<short-description>`
+- `chore/<short-description>`
 
 ## Validation
 
@@ -53,10 +53,10 @@ Never bypass authentication, paywalls, CAPTCHAs, rate limits, or technical acces
 
 - [ ] The change has a clear scope and rationale.
 - [ ] Tests are added or updated where behavior changes.
-- [ ] \`pytest\` and \`ruff check .\` pass.
+- [ ] `pytest` and `ruff check .` pass.
 - [ ] Documentation and project status reflect the actual implementation.
 - [ ] Source provenance and licensing are documented for new data.
 - [ ] No secrets, credentials, or unreviewed personal/contact data are included.
 - [ ] Any limitations or unverified assumptions are stated explicitly.
 
-Use descriptive commits, for example \`feat: add NREA source adapter\` or \`docs: clarify OSM attribution\`.
+Use descriptive commits, for example `feat: add NREA source adapter` or `docs: clarify OSM attribution`.

@@ -21,14 +21,14 @@ git remote -v
 git log --oneline --decorate -5
 ~~~
 
-**Stop and inspect** if \`git status\` shows modified, deleted, staged, or untracked files you care about. Do not use \`git reset --hard\`, \`git clean -fd\`, or force-push to make the output look clean.
+**Stop and inspect** if `git status` shows modified, deleted, staged, or untracked files you care about. Do not use `git reset --hard`, `git clean -fd`, or force-push to make the output look clean.
 
 Save a local inventory of the project files:
 
 ~~~powershell
 Get-ChildItem -Force
 Get-ChildItem -Recurse -File |
-    Where-Object { $_.FullName -notmatch '\\\\.git\\\\|\\\\.venv\\\\|\\\\__pycache__\\\\' } |
+    Where-Object { $_.FullName -notmatch '[\\/]\.git[\\/]|[\\/]\.venv[\\/]|[\\/]__pycache__[\\/]' } | |
     Select-Object FullName, Length, LastWriteTime
 ~~~
 
@@ -36,7 +36,7 @@ If the working tree contains important uncommitted changes, make a normal backup
 
 ## Checkpoint 1 — confirm the remote and fetch
 
-Confirm that \`origin\` points to:
+Confirm that `origin` points to:
 
 ~~~text
 https://github.com/Sohila-Khaled-Abbas/home-services-lead-intelligence.git
@@ -50,7 +50,7 @@ git branch -avv
 git log --oneline --decorate --all -10
 ~~~
 
-The professionalized repository is now on \`origin/main\`. Do not assume that your local \`main\` is current.
+The professionalized repository is now on `origin/main`. Do not assume that your local `main` is current.
 
 ## Checkpoint 2 — synchronize safely
 
@@ -60,14 +60,14 @@ First confirm that the working tree is clean:
 git status --short
 ~~~
 
-If it is clean and you are on \`main\`, fast-forward it:
+If it is clean and you are on `main`, fast-forward it:
 
 ~~~powershell
 git switch main
 git pull --ff-only origin main
 ~~~
 
-If you are not on \`main\`, or the tree is not clean, stop before switching branches. Review the status and diffs, preserve your work on a separate branch or backup, then synchronize deliberately. Do not merge unrelated local changes blindly.
+If you are not on `main`, or the tree is not clean, stop before switching branches. Review the status and diffs, preserve your work on a separate branch or backup, then synchronize deliberately. Do not merge unrelated local changes blindly.
 
 Verify the professionalization commit is now present:
 
@@ -116,7 +116,7 @@ For each future source adapter:
 3. Add a source-specific parser and unit tests using saved, sanitized fixtures.
 4. Normalize fields without inventing missing names, locations, contacts, or dates.
 5. Preserve original source IDs and extraction timestamps.
-6. Keep \`contact_permission_status = unknown\` and \`campaign_eligible = false\` unless separately reviewed and documented.
+6. Keep `contact_permission_status = unknown` and `campaign_eligible = false` unless separately reviewed and documented.
 7. Update the README and project status only after the implementation is tested.
 
 Do not commit new raw contact-bearing files until you have reviewed source reuse rights and the content for privacy and suitability.
@@ -139,11 +139,11 @@ git commit -m "feat: add NREA solar source adapter"
 git push -u origin feat/nrea-solar-source
 ~~~
 
-Open a pull request from the feature branch to \`main\`. Review the diff and CI checks before merging.
+Open a pull request from the feature branch to `main`. Review the diff and CI checks before merging.
 
 ## Recovery rules
 
 - If Git reports a merge conflict, do not delete conflict markers blindly. Inspect both versions and reconcile each file.
 - If a pull fails because local changes would be overwritten, stop and preserve those changes first.
-- Never use \`git push --force\` on \`main\`.
-- Never commit \`.venv\`, API tokens, passwords, local environment files, or unreviewed extraction files.
+- Never use `git push --force` on `main`.
+- Never commit `.venv`, API tokens, passwords, local environment files, or unreviewed extraction files.

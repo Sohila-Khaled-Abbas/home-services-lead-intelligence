@@ -84,11 +84,11 @@ Plumbing and electrical records are retained as adjacent-trade discovery evidenc
 - Eight explicit OSM tag selectors spanning target trades, retail candidates, and adjacent trades.
 - Handling of node coordinates and way/relation center coordinates.
 - Conservative classification with an explanatory classification note.
-- Stable within-source deduplication using \`(osm_type, osm_id)\`.
+- Stable within-source deduplication using `(osm_type, osm_id)`.
 - Preservation of the original JSON response before transformation.
 - UTF-8 CSV output with a stable schema, including zero-result runs.
 - Run metadata containing the endpoint, query path, bounding box, timestamps, record counts, output paths, and limitations.
-- Contact permission defaults to \`unknown\`; campaign eligibility defaults to \`false\`.
+- Contact permission defaults to `unknown`; campaign eligibility defaults to `false`.
 - Offline unit tests using a fake API response, so tests do not depend on Overpass availability.
 
 </details>
@@ -111,7 +111,7 @@ Plumbing and electrical records are retained as adjacent-trade discovery evidenc
 
 ### Current OSM extraction flow
 
-\`\`\`mermaid
+```mermaid
 flowchart TD
     A["OpenStreetMap / Overpass API"] --> B["Raw JSON snapshot"]
     B --> C["Normalize OSM elements"]
@@ -122,11 +122,11 @@ flowchart TD
     H["Exact Overpass QL query"] --> I["queries/"]
     G --> J["data/metadata/"]
     B --> K["data/raw/"]
-\`\`\`
+```
 
 ### Intended multi-source pipeline
 
-\`\`\`mermaid
+```mermaid
 flowchart LR
     A["Approved public APIs / sources"] --> B["Source-specific adapters"]
     B --> C["Raw snapshots + provenance"]
@@ -135,13 +135,13 @@ flowchart LR
     E --> F["Reviewable SQL store"]
     F --> G["Quality reporting"]
     F --> H["Reviewed downstream exports"]
-\`\`\`
+```
 
 The second diagram is a target architecture, not a description of features already delivered. Each future adapter must have documented access conditions, reuse terms, attribution requirements, and a source-specific identity before it is enabled.
 
 ## Repository structure
 
-\`\`\`text
+```text
 home-services-lead-intelligence/
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
@@ -168,7 +168,7 @@ home-services-lead-intelligence/
 ├── LICENSE
 ├── SECURITY.md
 └── pyproject.toml
-\`\`\`
+```
 
 ## Quick start
 
@@ -182,17 +182,17 @@ home-services-lead-intelligence/
 
 Clone the repository, then move into its folder:
 
-\`\`\`powershell
+```powershell
 git clone https://github.com/Sohila-Khaled-Abbas/home-services-lead-intelligence.git
 cd home-services-lead-intelligence
-\`\`\`
+```
 
 Create the virtual environment and install the project:
 
-\`\`\`powershell
+```powershell
 python -m venv .venv
 & ".\\.venv\\Scripts\\python.exe" -m pip install -e ".[dev]"
-\`\`\`
+```
 
 If the repository already exists locally, do **not** clone it over the existing folder. Use the safe synchronization steps in [the local-device checkpoint guide](docs/local-workflow.md).
 
@@ -200,21 +200,21 @@ If the repository already exists locally, do **not** clone it over the existing 
 
 Run the Cairo discovery query (this makes a live, read-only API request):
 
-\`\`\`powershell
+```powershell
 & ".\\.venv\\Scripts\\python.exe" ".\\scripts\\extract_osm_cairo_v2.py"
-\`\`\`
+```
 
 Run the offline test suite:
 
-\`\`\`powershell
+```powershell
 & ".\\.venv\\Scripts\\python.exe" -m pytest
-\`\`\`
+```
 
 Run Ruff lint checks:
 
-\`\`\`powershell
+```powershell
 & ".\\.venv\\Scripts\\python.exe" -m ruff check .
-\`\`\`
+```
 
 Overpass is a shared public service. Avoid rapid repeated requests. A successful HTTP response with zero matches is a valid zero-result extraction, not proof that the source contains no relevant businesses.
 
@@ -231,7 +231,7 @@ Every normalized OSM row retains the OSM element type and ID, feature URL, sourc
 5. Duplicate identity across sources.
 6. Contact permission and campaign eligibility.
 
-Publicly visible contact details do not establish consent or legal permission for direct marketing. The pipeline therefore defaults to \`contact_permission_status = unknown\` and \`campaign_eligible = false\`.
+Publicly visible contact details do not establish consent or legal permission for direct marketing. The pipeline therefore defaults to `contact_permission_status = unknown` and `campaign_eligible = false`.
 
 See [Data governance](docs/data-governance.md) and [Licensing](docs/licensing.md) before collecting, committing, or redistributing new records.
 
